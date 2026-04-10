@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Someone Special For You ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+  background-size: cover;
+  color: #3e2c2c;
+}
+
+.overlay {
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 1rem 2rem;
+  background: #fce4ec;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 2.8rem;
+  color: #ad1457;
+}
+
+main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ✨ NEW GLASS STYLE BLOCK */
+.block {
+  position: relative;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* 👈 text bottom */
+
+  padding: 1.5rem;
+  color: white;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+
+  opacity: 0;
+  transform: scale(0.5);
+  animation: popUp 0.6s ease forwards;
+}
+.block:hover {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+/* Text above overlay */
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Background images */
+.card1 {
+  background: url('file:///C:/Users/Mahesh/Downloads/Navya/Navya/Block%201.jpg') center/cover no-repeat;
+}
+
+.card2 {
+  background: url('file:///C:/Users/Mahesh/Downloads/Navya/Navya/Block%202.jpg') center/cover no-repeat;
+}
+
+.card3 {
+  background: url('file:///C:/Users/Mahesh/Downloads/Navya/Navya/Block%203.jpg') center/cover no-repeat;
+}
+
+/* Animation */
+.block:nth-child(1) { animation-delay: 0.2s; }
+.block:nth-child(2) { animation-delay: 0.4s; }
+.block:nth-child(3) { animation-delay: 0.6s; }
+
+/* KEYFRAMES */
+@keyframes popUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #ffffff;
+  text-transform: uppercase
+  -webkit-text-stroke: 1px rgba(0,0,0,0.6);
+}
+
+p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  color: #ffffff;;
+}
+
+
+/* Heading style */
+.block h2 {
+  font-family: 'Raleway', sans-serif;
+  color: #ec4899;
+  margin-bottom: 10px;
+}
+
+/* Text style */
+.block p {
+  color: #ffffff;
+}
+.block {
+  border: 5px solid rgba(255,255,255,0.3);
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.4);
+}
+
+.block:hover {
+  border: 5px solid #ec4899;
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.8);
+}
+/* Optional gradient text */
+.text-gradient {
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+footer {
+  background: #ad1457;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+</style>
+    <style>
+        .reduced-spacing {
+            line-height: 0.9; /* Reduces the space between lines */
+            margin-bottom: 0; /* Removes bottom margin */
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="overlay">
+  <header class="text-gradient" style="font-weight:bold; font-size:3rem;">For Birthday Girl</header>
+
+  <main>
+    <div class="block card1" onclick="go('Your World.html')">
+      <div class="content">
+        <h1>Your World</h1>
+        <p>Beautiful moments captured forever.</p>
+      </div>
+    </div>
+
+    <div class="block card2" onclick="go('Your Self.html')">
+      <div class="content">
+        <h1>Your Self</h1>
+        <p>Sweet words exchanged between our hearts.</p>
+      </div>
+    </div>
+
+    <div class="block card3" onclick="go('Friends.html')">
+      <div class="content">
+        <h1>Your Friends</h1>
+        <p>Who turned into best memories</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Every moment with you is my favorite memory ❤ Happy Birthday
+  </footer>
+</div>
+
+<script>
+function go(page) {
+  window.location.href = page;
+}
+</script>
+
+</body>
+</html>

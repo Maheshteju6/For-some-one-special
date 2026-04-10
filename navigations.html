@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your World</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+.header h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    color: #ad1457;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 100px 100px;
+}
+
+.column {
+    flex: 25%;
+    max-width: 25%;
+}
+
+.img-hover-zoom {
+    overflow: hidden;
+    border: 2px solid #ffffff;
+    margin: 5px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.img-hover-zoom img {
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+.img-hover-zoom:hover img {
+    transform: scale(1.2);
+}
+
+/* LIGHTBOX */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+    transform: scale(0.7);
+    transition: 0.3s;
+}
+
+.lightbox.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Navigation buttons */
+.nav {
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    transform: translateY(-50%);
+    padding: 10px;
+    user-select: none;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.nav:hover {
+    color: #ccc;
+}
+
+/* Responsive */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Your World</h1>
+</div>
+
+<div class="row">
+
+    <!-- COLUMN 1 -->
+        <div class="column">
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\1.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\2.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\3.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\4.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\5.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\6.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\7.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\35.jpeg" onclick="openLightbox(this.src)"></div>
+    </div>
+
+    <div class="column">
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\8.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\9.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\10.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\11.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\12.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\13.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\14.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\30.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\36.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\38.jpeg" onclick="openLightbox(this.src)"></div>
+    </div>
+
+    <div class="column">
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\15.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\16.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\18.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\19.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\20.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\21.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\22.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\32.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\37.jpeg" onclick="openLightbox(this.src)"></div>
+    </div>
+
+    <div class="column">
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\23.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\24.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\25.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\26.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\27.jpg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\28.jpg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\29.jpeg" onclick="openLightbox(this.src)"></div>
+        <div class="img-hover-zoom"><img src="C:\Users\Mahesh\Downloads\Navya\Navya\Family\33.jpeg" onclick="openLightbox(this.src)"></div>
+    </div>
+</div>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <span class="nav prev" onclick="changeImage(-1)">&#10094;</span>
+    <img id="lightbox-img">
+    <span class="nav next" onclick="changeImage(1)">&#10095;</span>
+</div>
+
+<script>
+let images = [];
+let currentIndex = 0;
+
+// Collect all images
+document.querySelectorAll(".img-hover-zoom img").forEach((img, index) => {
+    images.push(img.src);
+
+    img.addEventListener("click", () => {
+        openLightbox(index);
+    });
+});
+
+function openLightbox(index) {
+    currentIndex = index;
+    document.getElementById("lightbox-img").src = images[currentIndex];
+    document.getElementById("lightbox").classList.add("active");
+}
+
+function closeLightbox() {
+    document.getElementById("lightbox").classList.remove("active");
+}
+
+function changeImage(direction) {
+    currentIndex += direction;
+
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    if (currentIndex >= images.length) currentIndex = 0;
+
+    document.getElementById("lightbox-img").src = images[currentIndex];
+}
+
+// Keyboard controls
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") changeImage(1);
+    if (e.key === "ArrowLeft") changeImage(-1);
+    if (e.key === "Escape") closeLightbox();
+});
+</script>
+
+</body>
+</html>
